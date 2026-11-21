@@ -62,9 +62,12 @@ var (
 
 // View renders the application view
 func (m model) View() tea.View {
+	if m.quitting {
+		return tea.NewView("")
+	}
+
 	if !m.ready {
 		v := tea.NewView("Initializing...")
-		v.AltScreen = true
 		return v
 	}
 
@@ -89,7 +92,6 @@ func (m model) View() tea.View {
 
 		mainView := lipgloss.JoinHorizontal(lipgloss.Top, listBox, previewBox)
 		v := tea.NewView(lipgloss.JoinVertical(lipgloss.Left, mainView, m.inputRowView(inputView)))
-		v.AltScreen = true
 		v.Cursor = m.inputCursor()
 		return v
 	}
@@ -154,7 +156,6 @@ func (m model) View() tea.View {
 		mainView,
 		inputRow,
 	))
-	v.AltScreen = true
 	v.Cursor = m.inputCursor()
 	return v
 }

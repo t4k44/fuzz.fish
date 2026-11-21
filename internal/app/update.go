@@ -99,7 +99,7 @@ func (m model) Update(msg tea.Msg) (tea.Model, tea.Cmd) {
 
 		// Input box: top border (1) + input line (1) + bottom border (1) = 3
 		inputHeight := 3
-		mainHeight := msg.Height - inputHeight
+		mainHeight := msg.Height/2 - inputHeight
 		if mainHeight < 0 {
 			mainHeight = 0
 		}

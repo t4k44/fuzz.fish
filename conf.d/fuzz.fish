@@ -311,6 +311,8 @@ function fh --description 'Fish History viewer with context (TUI)'
             commandline -f repaint
         end
     end
+
+    commandline -f repaint
 end
 
 # Set up Ctrl+R key bindings for history/git/files unified search
