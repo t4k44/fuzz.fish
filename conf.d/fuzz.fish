@@ -147,7 +147,7 @@ function _fuzz_fish_download_binary
     end
 
     set -l asset "fuzz_"$os"_"$arch".tar.gz"
-    set -l base "https://github.com/jedipunkz/fuzz.fish/releases/latest/download"
+    set -l base "https://github.com/t4k44/fuzz.fish/releases/latest/download"
     set -l tmp_dir (mktemp -d)
 
     echo "   Downloading $asset..."
@@ -203,7 +203,7 @@ function _fuzz_fish_build_binary
     echo "   Cloning repository to $tmp_dir..."
 
     # Clone repository
-    if git clone --depth 1 https://github.com/jedipunkz/fuzz.fish.git "$tmp_dir" >/dev/null 2>&1
+    if git clone --depth 1 https://github.com/t4k44/fuzz.fish.git "$tmp_dir" >/dev/null 2>&1
         echo "   Clone successful"
     else
         echo "❌ fuzz.fish: Failed to clone repository!" >&2
